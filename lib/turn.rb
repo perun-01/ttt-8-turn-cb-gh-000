@@ -32,6 +32,7 @@ def valid_move?(board, index)
     elsif index>8
       puts "INVALID INPUT"
       turn(board)
+      return 1
     end
 end
 
