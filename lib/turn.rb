@@ -24,14 +24,15 @@ end
 
 # code your #valid_move? method here
 def valid_move?(board, index)
-    while index<=8
+    if index<=8
       if board[index]== " " || board[index]== ""
         move(board, index, value="X")
       elsif board[index]== "X" || board[index]== "O"
       end
+    elsif index>8
+      puts "INVALID INPUT"
+      turn(board)
     end
-    puts "INVALID INPUT"
-    turn(board)
 end
 
 # re-define your #position_taken? method here, so that you can use it in the #valid_move? method above.
