@@ -1,4 +1,8 @@
-def turn
+def turn(board)
+  puts "Please enter 1-9:"
+  input = gets.strip
+  index = input_to_index(input)
+  valid_move?(board, index)
 
 end
 
@@ -19,16 +23,15 @@ def move(board, index, value="X")
 end
 
 # code your #valid_move? method here
-def valid_move?(board, index, value)
-    if index<=8
+def valid_move?(board, index)
+    while index<=8
       if board[index]== " " || board[index]== ""
         move(board, index, value="X")
       elsif board[index]== "X" || board[index]== "O"
-        return false
       end
-    elsif index<=8
-      return false
     end
+    puts "INVALID INPUT"
+    turn(board)
 end
 
 
