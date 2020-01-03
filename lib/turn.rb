@@ -28,6 +28,8 @@ def valid_move?(board, index)
       if board[index]== " " || board[index]== ""
         move(board, index, value="X")
       elsif board[index]== "X" || board[index]== "O"
+        puts "INVALID INPUT"
+        turn(board)
       end
     elsif index>8
       puts "INVALID INPUT"
